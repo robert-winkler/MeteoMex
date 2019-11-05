@@ -13,6 +13,14 @@ The J1 needs to be closed for waking up the microprocessor from DeepSleep via th
 # Thinger.io IoT platform
 The programs provided here work for the Open Source IoT platform Thinger.io (<https://thinger.io>). You can sign up for free on Thinger.io and use it for a small project (up to 2 devices). If you are working on larger projects, you can set up your own Thinger.io IoT server (<https://docs.thinger.io/deployment>).
 
+# Description of the programs
+
+Arduino IDE program | MeteoMex | Sensors | Operation
+--------------------|----------|---------|----------
+D1-Mini_BME280_CCS811_ThingerIO | aeria | climate, VOCs | on USB, constantly connected to WiFi, data are collected every 5 minutes by Thinger
+D1-Mini_BME280_ThingerIO_DeepSleep | aeria | climate | on 3xAA batteries, wakes up very 1 hour, connects to WiFi, and pushes data to Thinger
+D1-Mini_DS18B20_soil_v1_2_ThingerIO_DeepSleep | tierra | soil moisture and temperature | on 3xAA batteries, wakes up very 1 hour, connects to WiFi, and pushes data to Thinger
+
 # Forum/ Discussion group
 You can post your ideas/ suggestions/ etc at <https://groups.google.com/forum/#!forum/meteomex>
 
