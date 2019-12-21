@@ -11,15 +11,19 @@ The Wemos/ESP8266 is compatible with the Arduino platform (<https://www.arduino.
 The J1 needs to be closed for waking up the microprocessor from DeepSleep via the RST pin. For reprogramming, the jumper must be removed. If transferring the compiled program to the Wemos D1 mini fails, you should try the reprogramming without the MeteoMex shield. If this still does not work, connect D3 with Ground and reset the Wemos. Now it should be in flashing mode.
 
 # Thinger.io IoT platform
-The programs provided here work for the Open Source IoT platform Thinger.io (<https://thinger.io>). You can sign up for free on Thinger.io and use it for a small project (up to 2 devices). If you are working on larger projects, you can set up your own Thinger.io IoT server (<https://docs.thinger.io/deployment>).
+Several programs provided here are written for the IoT platform Thinger.io (<https://thinger.io>). You can sign up for free on Thinger.io and use it for a small project (up to 2 devices). If you are working on larger projects, you can set up your own Thinger.io IoT server (<https://docs.thinger.io/deployment>). 
+
+# ThingsBoard IoT platform
+Currently, I migrate all MeteoMex programs to the ThingsBoard IoT platform (<https://thingsboard.io>), because 1) it provides an excellent (and real) Open Source community edition, and 2) a professional version for large-scale projects. There are various options to set-up a own server (<https://thingsboard.io/docs/user-guide/install/installation-options/>). The data are stored in database. For up to 5,000 messages/ second, the Open Source database PostgreSQL (<https://www.postgresql.org>) is recommended.
 
 # Description of the programs
 
-Arduino IDE program | MeteoMex | Sensors | Operation
---------------------|----------|---------|----------
-D1-Mini_BME280_CCS811_ThingerIO | aeria | climate, VOCs | on USB, constantly connected to WiFi, data are collected every 5 minutes by Thinger
-D1-Mini_BME280_ThingerIO_DeepSleep | aeria | climate | on 3xAA batteries, wakes up every 1 hour, connects to WiFi, and pushes data to Thinger
-D1-Mini_DS18B20_soil_v1_2_ThingerIO_DeepSleep | tierra | soil moisture and temperature | on 3xAA batteries, wakes up every 1 hour, connects to WiFi, and pushes data to Thinger
+Arduino IDE program | MeteoMex | Sensors | IoT platform | Operation
+--------------------|----------|---------|--------------|----------
+D1-Mini_BME280_CCS811_ThingerIO | aeria | climate, VOCs | Thinger | on USB, constantly connected to WiFi, data are collected every 5 minutes by Thinger
+D1-Mini_BME280_ThingerIO_DeepSleep | aeria | climate | Thinger | on 3xAA batteries, wakes up every 1 hour, connects to WiFi, and pushes data to Thinger
+autoconnect_ThingsBoard_aeria_VOCs | aeria | climate, VOCs | ThingsBoard | on USB, constantly connected to WiFi, data are pushed continuously via HTTP to ThingsBoard
+D1-Mini_DS18B20_soil_v1_2_ThingerIO_DeepSleep | tierra | soil moisture and temperature |Thinger | on 3xAA batteries, wakes up every 1 hour, connects to WiFi, and pushes data to Thinger
 
 # Forum/ Discussion group
 You can post your ideas/ suggestions/ etc at <https://groups.google.com/forum/#!forum/meteomex>
