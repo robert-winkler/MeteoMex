@@ -14,7 +14,7 @@ The J1 needs to be closed for waking up the microprocessor from DeepSleep via th
 Several programs provided here are written for the IoT platform Thinger.io (<https://thinger.io>). You can sign up for free on Thinger.io and use it for a small project (up to 2 devices). If you are working on larger projects, you can set up your own Thinger.io IoT server (<https://docs.thinger.io/deployment>). 
 
 # ThingsBoard IoT platform
-Currently, I migrate all MeteoMex programs to the ThingsBoard IoT platform (<https://thingsboard.io>), because 1) it provides an excellent (and real) Open Source community edition, and 2) a professional version for large-scale projects. There are various options to set-up a own server (<https://thingsboard.io/docs/user-guide/install/installation-options/>). The data are stored in database. For up to 5,000 messages/ second, the Open Source database PostgreSQL (<https://www.postgresql.org>) is recommended.
+Currently, I migrate all MeteoMex programs to the ThingsBoard IoT platform (<https://thingsboard.io>), because 1) it provides an excellent (and real) Open Source community edition, and 2) a professional version for large-scale projects. There are various options to set-up a own server (<https://thingsboard.io/docs/user-guide/install/installation-options/>). The data are stored in database. For up to 5,000 messages/ second, the Open Source database PostgreSQL (<https://www.postgresql.org>) is recommended. You can see a public dashbord (Weather station with VOC sensor) at: <http://www.meteomex.com:8080/dashboard/cbde9020-2f3e-11ea-a96e-c3dba8703f6d?publicId=e96f3c70-2f4d-11ea-a96e-c3dba8703f6d>
 
 # Description of the programs
 
@@ -22,7 +22,8 @@ Arduino IDE program | MeteoMex | Sensors | IoT platform | Operation
 --------------------|----------|---------|--------------|----------
 D1-Mini_BME280_CCS811_ThingerIO | aeria | climate, VOCs | Thinger | on USB, constantly connected to WiFi, data are collected every 5 minutes by Thinger
 D1-Mini_BME280_ThingerIO_DeepSleep | aeria | climate | Thinger | on 3xAA batteries, wakes up every 1 hour, connects to WiFi, and pushes data to Thinger
-autoconnect_ThingsBoard_aeria_VOCs | aeria | climate, VOCs | ThingsBoard | on USB, constantly connected to WiFi, data are pushed continuously via HTTP to ThingsBoard
+autoconnect_ThingsBoard_aeria_VOCs | aeria | climate, VOCs | ThingsBoard | on USB, constantly connected to WiFi, data are pushed continuously via HTTP to ThingsBoard (~150 data points per minute!), configuration of WiFi from mobile phone using a web interphase <https://github.com/prampec/IotWebConf>
+MeteoMex_USB_ThingsBoard_aeria_VOCs | aeria | climate, VOCs | ThingsBoard | on USB, constantly connected to WiFi, data are pushed every 10 minutes via HTTP to ThingsBoard
 D1-Mini_DS18B20_soil_v1_2_ThingerIO_DeepSleep | tierra | soil moisture and temperature |Thinger | on 3xAA batteries, wakes up every 1 hour, connects to WiFi, and pushes data to Thinger
 
 # Forum/ Discussion group
