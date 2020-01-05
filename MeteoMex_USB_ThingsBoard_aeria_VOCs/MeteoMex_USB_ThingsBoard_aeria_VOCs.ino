@@ -15,8 +15,8 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 
-const char* ssid = "4WP";
-const char* password = "bham2002";
+const char* ssid = "yourssid";
+const char* password = "yourpassword";
 
 // Configuration of sensors
 
