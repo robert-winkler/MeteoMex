@@ -4,6 +4,9 @@ This repository provides code examples for programming MeteoMex devices (<http:/
 # Microcontroller board
 The MeteoMex devices are built on a **Wemos D1 mini** board (<https://wiki.wemos.cc/products:d1:d1_mini>) which features a ESP8266 microcontroller @80 MHz, 4 Mb flash memory, 80 Kb RAM, 11 digital I/O pins and 1 analog I/O pin. The board comes with WiFi support, weights only 3 g and has very low energy consumption, which makes it an ideal platform for IoT applications.
 
+# Circuit design files
+The `Fritzing-PCB` directory contains the ciruit design files for the MeteoMex aeria and Meteomex terra Wemos shields. The files can be viewed and edited with Fritzing <https://fritzing.org/home/>).
+
 # Programming with Arduino IDE
 The Wemos/ESP8266 is compatible with the Arduino platform (<https://www.arduino.cc>) and therefore can be programmed over the USB port with the Arduino IDE (<https://www.arduino.cc/en/Main/Software>). For programming the Wemos, you need to install the ESP32 additional boards from https://dl.espressif.com/dl/package_esp32_index.json in the Arduino IDE and **choose the correct device: LOLIN/Wemos D1 R1.** Otherwise, you might "brick" it forever (happened to me..)! You also should be careful with the pinout of the Wemos D1 mini board (see <https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/>), if you modify the programs/ add functions. The GPIO pins on the Wemos D1 mini have different descriptions than the Arduino Pins. E.g. the Wemos D1 mini analog pin A0 corresponds in the programs to pin 17, and D1 to pin 5.
 
@@ -20,11 +23,14 @@ Currently, I migrate all MeteoMex programs to the ThingsBoard IoT platform (<htt
 
 Arduino IDE program | MeteoMex | Sensors | IoT platform | Operation
 --------------------|----------|---------|--------------|----------
-D1-Mini_BME280_CCS811_ThingerIO | aeria | climate, VOCs | Thinger | on USB, constantly connected to WiFi, data are collected every 5 minutes by Thinger
-D1-Mini_BME280_ThingerIO_DeepSleep | aeria | climate | Thinger | on 3xAA batteries, wakes up every 1 hour, connects to WiFi, and pushes data to Thinger
-autoconnect_ThingsBoard_aeria_VOCs | aeria | climate, VOCs | ThingsBoard | on USB, constantly connected to WiFi, data are pushed continuously via HTTP to ThingsBoard (~150 data points per minute!), configuration of WiFi from mobile phone using a web interphase <https://github.com/prampec/IotWebConf>
-MeteoMex_USB_ThingsBoard_aeria_VOCs | aeria | climate, VOCs | ThingsBoard | on USB, constantly connected to WiFi, data are pushed every 10 minutes via HTTP to ThingsBoard
-D1-Mini_DS18B20_soil_v1_2_ThingerIO_DeepSleep | tierra | soil moisture and temperature |Thinger | on 3xAA batteries, wakes up every 1 hour, connects to WiFi, and pushes data to Thinger
+autoconnect_ThingsBoard_aeria_VOCs | aeria | climate, VOCs | ThingsBoard | on USB, constantly connected to WiFi, data are pushed continuously via HTTP to ThingsBoard (~150 data points per minute!), configuration of WiFi from mobile phone using a web interphase <https://github.com/prampec/IotWebConf>.
+D1-Mini_BME280_CCS811_ThingerIO | aeria | climate, VOCs | Thinger | on USB, constantly connected to WiFi, data are collected every 5 minutes by Thinger.
+D1-Mini_BME280_ThingerIO_DeepSleep | aeria | climate | Thinger | on 3xAA batteries, wakes up every 1 hour, connects to WiFi, and pushes data to Thinger.
+D1-Mini_DS18B20_soil_v1_2_ThingerIO_DeepSleep | terra | soil moisture and temperature |Thinger | on 3xAA batteries, wakes up every 1 hour, connects to WiFi, and pushes data to Thinger.
+MeteoMex_USB_ThingsBoard_aeria_VOCs | aeria | climate, VOCs | ThingsBoard | on USB, constantly connected to WiFi, data are pushed every 10 minutes via HTTP to ThingsBoard.
+MeteoMex_USB_ThingsBoard_serial_DS18B20_soil_v1_2 | terra | soil moisture and temperature | ThingsBoard | on USB, sends data every hour to ThingsBoard.
+Prototype_USB_ThingsBoard_Waste_Water-Treatment | custom | SR04 ultrasonic and analog turbidity | ThingsBoard | on USB, measures tank filling level and turbidity every minute and pushes data to ThingsBoard. Data are also processed with a noise peak chopper (turbitidy) and Kalman-Filter and also sent to ThingsBoard.
+
 
 # Forum/ Discussion group
 You can post your ideas/ suggestions/ etc at <https://groups.google.com/forum/#!forum/meteomex>
