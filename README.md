@@ -2,7 +2,7 @@
 This repository provides code examples for programming MeteoMex devices (<http://www.meteomex.com>) and connecting them with the Internet of Things (IoT).
 
 # Microcontroller board
-The MeteoMex devices are built on a **Wemos D1 mini** board (<https://wiki.wemos.cc/products:d1:d1_mini>) which features a ESP8266 microcontroller @80 MHz, 4 Mb flash memory, 80 Kb RAM, 11 digital I/O pins and 1 analog I/O pin. The board comes with WiFi support, weights only 3 g and has very low energy consumption, which makes it an ideal platform for IoT applications.
+The MeteoMex devices are built on a **Wemos D1 mini** board (<https://www.wemos.cc/en/latest/d1/d1_mini.html>) which features a ESP8266 microcontroller @80 MHz, 4 Mb flash memory, 80 Kb RAM, 11 digital I/O pins and 1 analog I/O pin. The board comes with WiFi support, weights only 3 g and has very low energy consumption, which makes it an ideal platform for IoT applications.
 
 # Circuit design files
 The `Fritzing-PCB` directory contains the ciruit design files for the MeteoMex aeria and Meteomex terra Wemos shields. The files can be viewed and edited with Fritzing <https://fritzing.org/home/>).
